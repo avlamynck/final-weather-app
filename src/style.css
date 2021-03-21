@@ -1,3 +1,5 @@
-h1 {
-  color: red;
+.weather-app {
+  max-width: 600px;
+  margin: 30px auto;
+  border: solid 2px blueviolet;
 }
