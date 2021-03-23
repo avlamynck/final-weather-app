@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3cd9c7e47f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title> vanilla weather app</title>
 </head>
 
@@ -36,17 +37,19 @@
     </div>
     </div>
 
-    <h1> TOKYO </h1>
+    <h1 id="city"> TOKYO </h1>
 
-    <h2> Japan </h2>
+    <h2 id="country"> Japan </h2>
 
-    <h3> Tuesday 9:00 </h3>
+    <h3 id="day-of-week"> Tuesday 9:00 </h3>
 
     <i class="fas fa-cloud" id="forecast-icon"></i>
 
     <span class="greeting-sentence"> Good morning! It is currently </span>
 
-    <div class="current-temperature"> 18°C </div>
+    <div class="current-temperature">
+         <span id="temperature">18</span>°C 
+        </div>
 
     <span class="weather-description"> broken clouds </span>
 
@@ -84,14 +87,15 @@
         <div class="col-4" id="value-sunset">
             21:30
         </div>
-        <div class="col-4" id="value-feeling">
-            21°C
+        <div class="col-4">
+           <span id="value-feeling"> 21 </span>
+        °C 
         </div>
     </div>
 
     <small>
         open source code by
-        <a href="https://github.com/avlamynck/final-weather-app" target="_blank"> Anneleen Vlamynck</a>
+        <a href="https://github.com/avlamynck/final-weather-app" target="_blank"> by Anneleen Vlamynck</a>
     </small>
     
    

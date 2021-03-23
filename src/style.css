@@ -71,7 +71,7 @@ small {
 }
 .weather-description {
   font-family: "Quicksand", sans-serif;
-
+  text-transform: capitalize;
   font-size: 18px;
   display: block;
   text-align: center;
