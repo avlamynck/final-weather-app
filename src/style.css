@@ -33,6 +33,10 @@ h3 {
   margin-top: 25px;
 }
 
+h3:first-letter {
+  text-transform: capitalize;
+}
+
 small {
   margin-left: 28px;
   font-family: "Quicksand", sans-serif;

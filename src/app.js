@@ -1,3 +1,14 @@
+function formatDate (timestamp) {
+    let date = new Date (timestamp);
+    let hours = date.getHours();
+    if (hours <10) {hours=`0${hours}`};
+    let minutes = date.getMinutes();
+    if (minutes <10) {minutes = `0${minutes}`};
+    let days = ["sunday", "monday", "tuesday", "wednesday","thursday","friday", "saturday"];
+    let day = days[date.getDay()];
+    return ` ${day} ${hours}:${minutes}`; 
+}
+
 function displayTemperature(response) {
     console.log(response.data)
     let temperatureElement = document.querySelector("#temperature");
@@ -7,6 +18,7 @@ function displayTemperature(response) {
     let sunsetElement = document.querySelector("#value-sunset");
     let feelslikeElement = document.querySelector("#value-feeling");
     let countryElement=document.querySelector("#country");
+    let dateElement = document.querySelector("#date-time");
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML= response.data.weather[0].description;
@@ -14,6 +26,9 @@ function displayTemperature(response) {
     sunsetElement.innerHTML=response.data.sys.sunset;
     feelslikeElement.innerHTML= Math.round(response.data.main.feels_like);
     countryElement.innerHTML=response.data.sys.country;
+    dateElement.innerHTML= formatDate(response.data.dt * 1000);
+
+    console.log(response);
 
 
 }
