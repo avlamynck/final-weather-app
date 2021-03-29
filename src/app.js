@@ -33,6 +33,7 @@ function displayTemperature(response) {
     let descriptionElement = document.querySelector(".weather-description");
     let sunriseElement = document.querySelector("#value-sunrise");
     let sunsetElement = document.querySelector("#value-sunset");
+    let windElement = document.querySelector("#wind");
     let feelslikeElement = document.querySelector("#value-feeling");
     let countryElement=document.querySelector("#country");
     let dateElement = document.querySelector("#date-time");
@@ -43,11 +44,14 @@ function displayTemperature(response) {
     descriptionElement.innerHTML= response.data.weather[0].description;
     sunriseElement.innerHTML= formattedDate (response.data.sys.sunrise *1000);
     sunsetElement.innerHTML= formattedDateSunset(response.data.sys.sunset *1000);
+    windElement.innerHTML = Math.round(response.data.wind.speed); 
     feelslikeElement.innerHTML= Math.round(response.data.main.feels_like);
     countryElement.innerHTML=response.data.sys.country;
     dateElement.innerHTML= formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
+
+    console.log(response.data.wind.speed);
 
 }
 

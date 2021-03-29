@@ -10,15 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3cd9c7e47f.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title> vanilla weather app</title>
 </head>
 
 <body>
 <div class="container">
   <div class="weather-app">
-
-    <i data-feather="circle"></i>
  
     <div class="row">
         <div class="col-8">
@@ -38,58 +36,70 @@
     </div>
     </div>
 
-    <h1 id="city"> TOKYO </h1>
+    <h1 id="city"> </h1>
 
-    <h2 id="country"> Japan </h2>
+    <h2 id="country"> </h2>
 
     <h3 id="date-time"> Tuesday  9:00 </h3>
 
-    <img src="" alt="clear" id="forecast-icon">
+    <img src="" alt="" id="forecast-icon">
 
     <span class="greeting-sentence"> Good morning! It is currently </span>
 
     <div class="current-temperature">
-         <span id="temperature">18</span>°C 
+         <span id="temperature"> </span> 
         </div>
 
-    <span class="weather-description"> broken clouds </span>
+    <span class="weather-description" id="weather-description"> </span>
 
     <hr>
 
     <div class="row">
-    <div class="col-4" id="sunrise-icon"> 
+    <div class="col-3" id="sunrise-icon"> 
         <i class="far fa-sun"></i>
              
     </div>
-    <div class="col-4" id="sunset-icon">
+    <div class="col-3" id="sunset-icon">
         <i class="far fa-moon"></i>
     </div>
-    <div class="col-4" id="feeling-icon" >
+    <div class="col-3" id="wind-icon">
+        <i class="fas fa-wind"></i>
+    </div>
+
+    <div class="col-3" id="feeling-icon" >
         <i class="fas fa-temperature-high"></i> 
     </div>
     </div>
 
     <div class="row">
-        <div class="col-4" id="description-sunrise">
+        <div class="col-3" id="description-sunrise">
            sunrise
         </div>
-        <div class="col-4" id="description-sunset">
+        <div class="col-3" id="description-sunset">
             sunset
         </div>
-        <div class="col-4" id="description-feeling">
+        <div class="col-3" id="description-wind">
+            wind speed
+        </div>
+
+        <div class="col-3" id="description-feeling">
             feels like 
         </div>
     </div>
 
     <div class="row">
-        <div class="col-4" id="value-sunrise">
+        <div class="col-3" id="value-sunrise">
             6:40 
         </div>
-        <div class="col-4" id="value-sunset">
+        <div class="col-3" id="value-sunset">
             21:30
         </div>
-        <div class="col-4">
-           <span id="value-feeling"> 21°C </span>
+        <div class="col-3" id="value-wind">
+          <span id="wind"> </span>
+        </div>
+    
+        <div class="col-3">
+           <span id="value-feeling"></span>
         
         </div>
     </div>
