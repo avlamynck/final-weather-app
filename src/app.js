@@ -36,7 +36,7 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind");
     let feelslikeElement = document.querySelector("#value-feeling");
     let countryElement=document.querySelector("#country");
-    let dateElement = document.querySelector("#date-time");
+    let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#forecast-icon");
 
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -51,7 +51,7 @@ function displayTemperature(response) {
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
-    console.log(response.data.wind.speed);
+    console.log(response.data);
 
 }
 
@@ -108,4 +108,18 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search ("Sydney");  
+
+function searchLocation(position) {
+    let apiKey = "c464dd164b44484161303b9f1d1f0121";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+event.preventDefault();
+navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
 
