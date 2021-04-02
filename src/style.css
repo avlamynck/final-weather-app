@@ -38,7 +38,7 @@ h3:first-letter {
 }
 
 small {
-  margin-left: 28px;
+  margin-left: 18px;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -50,12 +50,21 @@ small {
   padding: 30px;
 }
 
+body {
+  background-image: url(https://images.unsplash.com/photo-1612908055356-8c51bc883355?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .weather-app {
+  background-color: rgba(254, 234, 250, 0.3);
   max-width: 600px;
   margin: 30px auto;
   padding: 30px;
-  border: solid 1px blueviolet;
-  border-radius: 3px;
+  border: solid 1px white;
+  border-radius: 5px;
 }
 .greeting-sentence {
   font-family: "Quicksand", sans-serif;
@@ -134,14 +143,19 @@ small {
 
 #value-sunrise,
 #value-sunset,
-#wind,
+#value-wind,
 #value-feeling {
   display: block;
   font-family: monospace;
   font-size: 20px;
   text-align: center;
-  letter-spacing: 4px;
   padding-top: 0;
   margin-top: 10px;
   margin-bottom: 50px;
+}
+
+#celsius,
+#fahrenheit {
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
 }

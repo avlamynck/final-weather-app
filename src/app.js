@@ -51,8 +51,6 @@ function displayTemperature(response) {
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
-    console.log(response.data);
-
 }
 
 function formatHours (timestamp) {
@@ -62,8 +60,9 @@ function formatHours (timestamp) {
     let minutes = date.getMinutes();
     if (minutes <10) {minutes = `0${minutes}`};
     return `${hours}:${minutes}`
-
 }
+
+
 
 function displayForecast(response) {
     let forecastElement = document.querySelector("#forecast");
@@ -122,4 +121,8 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+
+
+
 
