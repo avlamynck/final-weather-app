@@ -9,6 +9,7 @@ function formatDate (timestamp) {
     return ` ${day} ${hours}:${minutes}`; 
 }
 
+
 function formattedDate (timestamp) {
     let date = new Date (timestamp);
     let sunriseDate = new Date (timestamp);
@@ -26,6 +27,30 @@ function formattedDateSunset (timestamp) {
     let minutes = date.getMinutes();
     return `${hour}:${minutes}`;
 }
+
+function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["MON","TUE","WED","THU","FRI","SAT"];
+    days.forEach(function(day) {
+          forecastHTML = forecastHTML +
+        `
+        <div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+            <img src="https://pics.freeicons.io/uploads/icons/png/7326596361553239397-512.png" alt=""/>
+                <div class="weather-forecast-temperature">
+                    <span class="weather-forecast-temperature-min"> 12° </span>
+                    <span class="weather-forecast-temperature-max"> 18° </span>
+                </div>
+            </div>
+    `;
+     })
+  
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
@@ -84,7 +109,7 @@ function handleSubmit (event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search ("Sydney");  
+search ("Sydney"); 
 
 function searchLocation(position) {
     let apiKey = "c464dd164b44484161303b9f1d1f0121";
@@ -99,6 +124,8 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+displayForecast(); 
 
 
 
