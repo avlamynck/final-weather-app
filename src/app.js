@@ -28,7 +28,8 @@ function formattedDateSunset (timestamp) {
     return `${hour}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
 
     let forecastHTML = `<div class="row">`;
@@ -49,6 +50,13 @@ function displayForecast() {
   
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+    console.log(coordinates);
+    let apiKey = "c464dd164b44484161303b9f1d1f0121";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
 }
 
 
@@ -76,6 +84,8 @@ function displayTemperature(response) {
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
 
+    getForecast(response.data.coord);
+
 }
 
 function formatHours (timestamp) {
@@ -86,8 +96,6 @@ function formatHours (timestamp) {
     if (minutes <10) {minutes = `0${minutes}`};
     return `${hours}:${minutes}`
 }
-
-
 
 
 function search(city) {
@@ -125,7 +133,6 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
-displayForecast(); 
 
 
 
