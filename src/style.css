@@ -78,7 +78,6 @@ body {
 }
 
 .weather-app {
-  background-color: rgba(254, 234, 250, 0.3);
   background-color: rgba(107, 112, 92, 0.4);
   max-width: 600px;
   margin: 30px auto;
@@ -120,6 +119,10 @@ body {
   border-radius: 3px;
   border: solid 1px white;
 }
+.form-input {
+  font-family: monospace;
+  padding-top: 9px;
+}
 .fas.fa.search {
   color: black;
   background-color: white;
@@ -127,9 +130,10 @@ body {
   border: solid 1px white;
   height: 36px;
 }
-
-#searchIcon :hover {
-  background-color: red;
+.fas.fa.search:hover {
+  background-color: #b7b7a4;
+  color: white;
+  transition: ease-in-out 200ms;
 }
 
 .weather-forecast-temperature {

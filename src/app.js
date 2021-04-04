@@ -109,7 +109,6 @@ function formatHours (timestamp) {
     return `${hours}:${minutes}`
 }
 
-
 function search(city) {
 let apiKey = "c464dd164b44484161303b9f1d1f0121";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
