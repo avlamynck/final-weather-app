@@ -52,14 +52,18 @@ function getForecast(coordinates) {
 
 }
 
-
+function displayCurrentDate (response) {
+      let dateElement = document.querySelector("#date");
+      dateElement.innerHTML= formatDate(response.data.dt * 1000);
+    
+}
 function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector(".weather-description");
     let windElement = document.querySelector("#wind");
     let countryElement=document.querySelector("#country");
-    let dateElement = document.querySelector("#date");
+  
     let iconElement = document.querySelector("#forecast-icon");
     let minElement = document.querySelector("#value-min");
     let maxElement = document.querySelector("#value-max");
@@ -70,7 +74,7 @@ function displayTemperature(response) {
     descriptionElement.innerHTML= response.data.weather[0].description;
     windElement.innerHTML = Math.round(response.data.wind.speed); 
     countryElement.innerHTML=response.data.sys.country;
-    dateElement.innerHTML= formatDate(response.data.dt * 1000);
+    
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
     minElement.innerHTML=Math.round(response.data.main.temp_min) + "°";
@@ -115,6 +119,7 @@ function searchLocation(position) {
     let apiKey = "c464dd164b44484161303b9f1d1f0121";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
+axios.get(apiUrl).then(displayCurrentDate);
 }
 
 function getCurrentLocation(event) {
@@ -124,6 +129,7 @@ navigator.geolocation.getCurrentPosition(searchLocation);
 
 let currentLocationButton = document.querySelector("#location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
 
 
 
