@@ -61,7 +61,7 @@ a {
   color: white;
 }
 #forecast-icon {
-  font-size: 250px;
+  font-size: 200px;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -145,14 +145,16 @@ body {
 #forecast img {
   display: block;
   margin: 0 auto;
-  height: 50px;
-  width: 50px;
 }
 
 #forecast {
   text-align: center;
   font-family: "Quicksand", sans-serif;
   margin-bottom: 25px;
+}
+#forecast-icon {
+  height: 300px;
+  padding: 0;
 }
 
 #description-min,
