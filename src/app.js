@@ -9,7 +9,6 @@ function formatDate (timestamp) {
     return ` ${day} ${hours}:${minutes}`; 
 }
 
-
 function formattedDate (timestamp) {
     let date = new Date (timestamp);
     let sunriseDate = new Date (timestamp);
@@ -77,25 +76,25 @@ function displayTemperature(response) {
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector(".weather-description");
-    let sunriseElement = document.querySelector("#value-sunrise");
-    let sunsetElement = document.querySelector("#value-sunset");
     let windElement = document.querySelector("#wind");
-    let feelslikeElement = document.querySelector("#value-feeling");
     let countryElement=document.querySelector("#country");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#forecast-icon");
+    let minElement = document.querySelector("#value-min");
+    let maxElement = document.querySelector("#value-max");
+    let humidityElement = document.querySelector("#value-humidity");
 
     temperatureElement.innerHTML = Math.round(response.data.main.temp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML= response.data.weather[0].description;
-    sunriseElement.innerHTML= formattedDate (response.data.sys.sunrise *1000);
-    sunsetElement.innerHTML= formattedDateSunset(response.data.sys.sunset *1000);
     windElement.innerHTML = Math.round(response.data.wind.speed); 
-    feelslikeElement.innerHTML= Math.round(response.data.main.feels_like);
     countryElement.innerHTML=response.data.sys.country;
     dateElement.innerHTML= formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`); 
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    minElement.innerHTML=Math.round(response.data.main.temp_min);
+    maxElement.innerHTML=Math.round(response.data.main.temp_max);
+    humidityElement.innerHTML=Math.round(response.data.main.humidity);
 
     getForecast(response.data.coord);
 

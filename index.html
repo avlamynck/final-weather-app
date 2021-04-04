@@ -20,11 +20,11 @@
   <div class="weather-app">
  
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
     <form class="form-style" id="search-form"> 
         <input type="search" class="form-input"
         placeholder="enter city" 
-        autocomplete="off" 
+        autocomplete="off"
         autofocus="off"
         id="city-input"/>
         <input type="submit" class="fas fa search"  id="searchIcon" value="&#xf002;"/>
@@ -32,8 +32,8 @@
     </form>  
     </div>
     
-    <div class="col-4">
-    <button class="shadow-sm" id="location-button"> current location </button>
+    <div class="col-5">
+    <button class="shadow-sm" id="location-button"> <i class="fas fa-map-marker-alt"></i></button>
     </div>
     </div>
 
@@ -57,51 +57,51 @@
     <hr>
 
     <div class="row">
-    <div class="col-3" id="sunrise-icon"> 
-        <i class="far fa-sun"></i>
+    <div class="col-3" id="minimum-icon"> 
+        <i class="fas fa-arrow-down"></i>
              
     </div>
-    <div class="col-3" id="sunset-icon">
-        <i class="far fa-moon"></i>
+    <div class="col-3" id="maximum-icon">
+        <i class="fas fa-arrow-up"></i>
     </div>
     <div class="col-3" id="wind-icon">
         <i class="fas fa-wind"></i>
     </div>
 
-    <div class="col-3" id="feeling-icon" >
-        <i class="fas fa-temperature-high"></i> 
+    <div class="col-3" id="humidity-icon" >
+        <i class="fas fa-tint"></i>
     </div>
     </div>
 
     <div class="row">
-        <div class="col-3" id="description-sunrise">
-           sunrise
+        <div class="col-3" id="description-min">
+           minimum
         </div>
-        <div class="col-3" id="description-sunset">
-            sunset
+        <div class="col-3" id="description-max">
+            maximum
         </div>
         <div class="col-3" id="description-wind">
             wind speed
         </div>
 
-        <div class="col-3" id="description-feeling">
-            feels like 
+        <div class="col-3" id="description-humidity">
+            humidity
         </div>
     </div>
 
     <div class="row">
-        <div class="col-3" id="value-sunrise">
-            6:40 
+        <div class="col-3" id="value-min">
+           <span>°C</span> 
         </div>
-        <div class="col-3" id="value-sunset">
-            21:30
+        <div class="col-3" id="value-max">
+            <span>°C</span>
         </div>
         <div class="col-3" id="value-wind">
           <span id="wind"></span>km/h
         </div>
     
-        <div class="col-3" id="value-feeling">
-           <span id="feeling"></span> °C
+        <div class="col-3" id="value-humidity">
+           <span id="feeling"></span> %
         </div>
     </div>
     <hr/>
